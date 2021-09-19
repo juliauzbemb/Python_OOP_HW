@@ -11,8 +11,8 @@ class Student:
         self.finished_courses.append(course_name)
 
     def lecturer_rate_hw(self, lecturer, course, grade):
-        if isinstance(lecturer,
-                      Lecturer) and course in lecturer.courses_attached and course in self.courses_in_progress:
+        if isinstance(lecturer, Lecturer) and course in lecturer.courses_attached and \
+                course in self.courses_in_progress:
             if course in lecturer.grades:
                 lecturer.grades[course] += [grade]
             else:
@@ -124,6 +124,7 @@ lecturer_1.get_avg_grade()
 lecturer_2.get_avg_grade()
 print(student_1)
 print(student_2)
+print(student_1.__lt__(student_2))
 print(lecturer_1)
 print(lecturer_2)
 print(lecturer_2.__lt__(lecturer_1))
